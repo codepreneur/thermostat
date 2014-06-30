@@ -60,6 +60,19 @@ describe("Thermostat",function(){
     })
   })
 
+  describe('cooler', function(){
+    it('decreases the temperature if > 10', function(){
+      thermostat.cooler();
+      expect(thermostat.temperature).toEqual(19)
+    })
+
+    it('does nothing the temperature if <= 10', function(){
+      thermostat.temperature = 10
+      thermostat.cooler();
+      expect(thermostat.temperature).toEqual(10)
+    })
+  })
+
 })
 
 
